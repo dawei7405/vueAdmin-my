@@ -43,6 +43,7 @@ export default {
         username: '',
         password: '',
         code: '',
+        token:''
       },
       rules: {
         username: [
@@ -62,7 +63,11 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!');
+          this.$axios.post('/login',this.loginForm).then(
+              res=>{
+
+              }
+          )
         } else {
           console.log('error submit!!');
           return false;
